@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="Dtos\Responses\Admin" />
+        <Folder Include="Infrastructure\Filters" />
+        <Folder Include="wwwroot\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AspNetCore.RouteAnalyzer" Version="0.5.3" />
+        <PackageReference Include="Bogus" Version="25.0.2" />
+        <PackageReference Include="Microsoft.AspNetCore.App" />
+        <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.1" />
+        <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="views\Order\Checkout.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Order\Completed.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Order\List.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Cart\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Home\About.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Home\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Shared\Components\CartSummary\Default.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Shared\Components\UserMenu\Default.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Shared\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Shared\Footer.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Shared\Header.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Shared\Product.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Shared\_AdminLayout.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Shared\_LoginPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="views\Shared\_ValidationScriptsPartial.cshtml" />
+    </ItemGroup>
+
+</Project>

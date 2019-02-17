@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiCoreEcommerce", "ApiCoreEcommerce\ApiCoreEcommerce.csproj", "{783A6A64-9C56-4520-80C1-B7FCE2FBA00D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{783A6A64-9C56-4520-80C1-B7FCE2FBA00D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{783A6A64-9C56-4520-80C1-B7FCE2FBA00D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{783A6A64-9C56-4520-80C1-B7FCE2FBA00D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{783A6A64-9C56-4520-80C1-B7FCE2FBA00D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
