@@ -24,7 +24,7 @@ namespace ApiCoreEcommerce.Dtos.Responses.Comments
             return new CommentListDto
             {
                 Success = true,
-                PageMeta = new PageMeta(result.Count, basePath, currentPage: currentPage, pageSize: pageSize,
+                PageMeta = new PageMeta(result.Count, basePath, currentPageNumber: currentPage, requestedPageSize: pageSize,
                     totalItemCount: totalItemCount),
                 Comments = result
             };

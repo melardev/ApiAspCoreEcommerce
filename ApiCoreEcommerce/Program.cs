@@ -47,7 +47,7 @@ namespace ApiCoreEcommerce
                 // .UseKestrel(kerselOptions => kerselOptions.AddServerHeader = false)
                 // .UseContentRoot(Directory.GetCurrentDirectory())
                 // .UseIISIntegration()
-                .UseUrls("http://localhost:8080", "https://localhost:5001")
+                .UseUrls("http://localhost:8080" /*, "https://localhost:5001"*/)
                 .UseStartup<Startup>();
     }
 }

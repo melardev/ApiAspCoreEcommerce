@@ -26,7 +26,10 @@ namespace ApiCoreEcommerce.Controllers
             _categoriesService = categoriesService;
         }
 
+        
         [HttpGet]
+        [Route("")]
+        [Route("home")]
         public async Task<IActionResult> Index()
         {
             Tuple<int, List<Tag>> tags = await _tagsService.FetchPageWithImages(1, 3);

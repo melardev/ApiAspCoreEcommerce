@@ -12,7 +12,9 @@ namespace ApiCoreEcommerce.Dtos.Responses.Products
         public long Id { get; set; }
         public string Name { get; set; }
         public string Slug { get; set; }
-        public string Description { get; set; }
+        public int Price { get; set; }
+        public int Stock { get; set; }
+
         public int CommentsCount { get; set; }
 
         public List<string> Categories { get; set; }
@@ -30,6 +32,8 @@ namespace ApiCoreEcommerce.Dtos.Responses.Products
                 Id = product.Id,
                 Name = product.Name,
                 Slug = product.Slug,
+                Price = product.Price,
+                Stock = product.Stock,
                 CommentsCount = product.CommentsCount,
                 Categories = CategoryOnlyNameDto.BuildAsStringList(product.ProductCategories),
                 Tags = TagOnlyNameDto.BuildAsStringList(product.ProductTags),

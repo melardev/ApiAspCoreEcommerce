@@ -24,7 +24,7 @@ namespace ApiCoreEcommerce.Dtos.Responses.Tag
 
             return new TagListDtoResponse
             {
-                PageMeta = new PageMeta(tags.Count, basePath, currentPage: currentPage, pageSize: pageSize,
+                PageMeta = new PageMeta(tags.Count, basePath, currentPageNumber: currentPage, requestedPageSize: pageSize,
                     totalItemCount: totalItemCount),
                 Tags = tagDtos
             };

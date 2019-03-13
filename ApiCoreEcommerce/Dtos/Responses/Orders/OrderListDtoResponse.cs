@@ -22,7 +22,7 @@ namespace ApiCoreEcommerce.Dtos.Responses.Orders
 
             return new OrdersListDtoResponse
             {
-                PageMeta = new PageMeta(orders.Count, basePath, currentPage: currentPage, pageSize: pageSize,
+                PageMeta = new PageMeta(orders.Count, basePath, currentPageNumber: currentPage, requestedPageSize: pageSize,
                     totalItemCount: totalItemCount),
                 Orders = orderDtos
             };

@@ -22,7 +22,7 @@ namespace ApiCoreEcommerce.Dtos.Responses.Products
 
             return new AddressesListDtoResponse
             {
-                PageMeta = new PageMeta(addresses.Count, basePath, currentPage: currentPage, pageSize: pageSize,
+                PageMeta = new PageMeta(addresses.Count, basePath, currentPageNumber: currentPage, requestedPageSize: pageSize,
                     totalItemCount: totalItemCount),
                 Addresses = addressDtos
             };

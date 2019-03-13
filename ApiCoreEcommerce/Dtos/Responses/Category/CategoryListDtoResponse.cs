@@ -23,7 +23,7 @@ namespace ApiCoreEcommerce.Dtos.Responses.Category
 
             return new CategoryListDtoResponse
             {
-                PageMeta = new PageMeta(categories.Count, basePath, currentPage: currentPage, pageSize: pageSize,
+                PageMeta = new PageMeta(categories.Count, basePath, currentPageNumber: currentPage, requestedPageSize: pageSize,
                     totalItemCount: totalItemCount),
                 Categories = tagDtos
             };

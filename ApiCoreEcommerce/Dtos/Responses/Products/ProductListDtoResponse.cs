@@ -23,7 +23,7 @@ namespace ApiCoreEcommerce.Dtos.Responses.Products
 
             return new ProductListDtoResponse
             {
-                PageMeta = new PageMeta(products.Count, basePath, currentPage: currentPage, pageSize: pageSize,
+                PageMeta = new PageMeta(products.Count, basePath, currentPageNumber: currentPage, requestedPageSize: pageSize,
                     totalItemCount: totalItemCount),
                 Products = productSummaryDtos
             };

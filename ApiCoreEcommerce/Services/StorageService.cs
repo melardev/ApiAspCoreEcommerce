@@ -54,7 +54,7 @@ namespace ApiCoreEcommerce.Services
         public async Task<FileUpload> UploadFormFile(IFormFile file, string path = "")
         {
             VerifyPath(path);
-
+            // System.IO.Path.GetExtension(file.FileName);
             var fileName = GetRandomFileName() + GetFileExtension(file.FileName);
             var filePath = string.IsNullOrEmpty(path)
                 ? Path.Combine(ImageUploadDirectory, fileName)

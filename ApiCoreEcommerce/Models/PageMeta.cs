@@ -4,57 +4,58 @@ namespace BlogDotNet.Models
 {
     public class PageMeta
     {
-        public int CurrentPage { get; set; }
-
+        public int CurrentPageNumber { get; set; }
+        public int Offset { get; set; }
         public int TotalItemsCount { get; set; }
         public int CurrentItemsCount { get; set; }
         public bool HasNextPage { get; set; }
         public bool HasPrevPage { get; set; }
-        public string PrevUrl { get; set; }
-        public string NextUrl { get; set; }
+        public string PrevPageUrl { get; set; }
+        public string NextPageUrl { get; set; }
 
-        public int PreviousPage { get; set; }
-        public int NextPage { get; set; }
+        public int PrevPageNumber { get; set; }
+        public int NextPageNumber { get; set; }
         public string BasePath { get; set; }
-        public int TotalPagesCount { get; set; }
+        public int NumberOfPages { get; set; }
         public int RequestedPageSize { get; set; }
 
         public PageMeta()
         {
         }
 
-        public PageMeta(int currentItemsCount, string basePath, int currentPage, int pageSize, int totalItemCount)
+        public PageMeta(int currentItemsCount, string basePath, int currentPageNumber, int requestedPageSize, int totalItemCount)
         {
-            CurrentPage = currentPage;
+            CurrentPageNumber = currentPageNumber;
             CurrentItemsCount = currentItemsCount;
+            Offset = (currentPageNumber - 1) * requestedPageSize;
             TotalItemsCount = totalItemCount;
             BasePath = basePath;
-            RequestedPageSize = pageSize;
+            RequestedPageSize = requestedPageSize;
 
-            PreviousPage = currentPage;
-            NextPage = currentPage;
+            PrevPageNumber = currentPageNumber;
+            NextPageNumber = currentPageNumber;
 
-            var skipt = (CurrentPage - 1) * RequestedPageSize;
+            var skipt = (CurrentPageNumber - 1) * RequestedPageSize;
             var traversedSoFar = skipt + CurrentItemsCount;
             var remaining = TotalItemsCount - traversedSoFar;
-            HasNextPage = remaining > pageSize;
-            HasPrevPage = currentPage > 1;
-            if (pageSize == 0) // avoid the 0/0 Division
-                TotalPagesCount = 0;
+            HasNextPage = remaining > requestedPageSize;
+            HasPrevPage = currentPageNumber > 1;
+            if (requestedPageSize == 0) // avoid the 0/0 Division
+                NumberOfPages = 0;
             else
-                TotalPagesCount = (int) Math.Ceiling((decimal) (totalItemCount/pageSize ));
+                NumberOfPages = (int) Math.Ceiling((decimal) (totalItemCount / requestedPageSize));
 
 
             if (HasNextPage)
-                NextPage = CurrentPage + 1;
+                NextPageNumber = CurrentPageNumber + 1;
 
-            NextUrl = $"{basePath}/?page={NextPage}&pageSize={RequestedPageSize}";
+            NextPageUrl = $"{basePath}/?page={NextPageNumber}&pageSize={RequestedPageSize}";
 
             if (HasPrevPage)
-                PreviousPage = CurrentPage - 1;
+                PrevPageNumber = CurrentPageNumber - 1;
 
 
-            PrevUrl = $"{basePath}/?page={PreviousPage}&pageSize={RequestedPageSize}";
+            PrevPageUrl = $"{basePath}/?page={PrevPageNumber}&pageSize={RequestedPageSize}";
         }
     }
 }

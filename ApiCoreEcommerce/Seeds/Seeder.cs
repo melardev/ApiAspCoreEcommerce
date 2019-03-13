@@ -138,7 +138,7 @@ namespace ApiCoreEcommerce.Seeds
                     return;
                 var faker = new Faker<Tag>()
                     .RuleFor(t => t.Name, f => f.Lorem.Word())
-                    .RuleFor(t => t.Description, f => f.Lorem.Sentences(2))
+                    .RuleFor(t => t.Description, f => f.Lorem.Sentences(1))
                     .FinishWith((fake, tagInstance) =>
                     {
                         var numberOfImages = fake.Random.Int(min: 1, max: 3);
